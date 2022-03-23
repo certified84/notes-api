@@ -16,12 +16,12 @@ data class Course(
     var unit: Int = 0,
     var score: Int = 0,
 ) {
-    var grade: String = when {
-        score >= 70 -> "A"
-        score >= 60 -> "B"
-        score >= 50 -> "C"
-        score >= 45 -> "D"
-        else -> "F"
+    var grade = when {
+        score >= 70 -> 'A'
+        score >= 60 -> 'B'
+        score >= 50 -> 'C'
+        score >= 45 -> 'D'
+        else -> 'F'
     }
 
     var gradePoint: Int = when {
@@ -32,7 +32,8 @@ data class Course(
         else -> 0
     }
 
-    var creditPoint: Int = gradePoint * unit
+    var creditPoint = gradePoint * unit
+    var noOfCourses = 0
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

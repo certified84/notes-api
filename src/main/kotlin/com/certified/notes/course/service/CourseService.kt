@@ -3,7 +3,6 @@ package com.certified.notes.course.service
 import com.certified.notes.course.model.Course
 import com.certified.notes.course.model.Message
 import com.certified.notes.course.repository.CourseRepository
-import com.certified.notes.note.model.Note
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -34,11 +33,11 @@ class CourseService constructor(@Autowired private val repository: CourseReposit
         return repository.getById(id)
     }
 
-    fun getNotesWithCourseCode(courseCode: String): List<Note> {
-        val notes = repository.findCourseNotes(courseCode)
-            .orElseThrow { IllegalStateException("Notes with course code $courseCode doesn't exists.") }
-        return notes
-    }
+//    fun getNotesWithCourseCode(courseCode: String): List<Note> {
+//        val notes = repository.findCourseNotes(courseCode)
+//            .orElseThrow { IllegalStateException("Notes with course code $courseCode doesn't exists.") }
+//        return notes
+//    }
 
     @Transactional
     fun updateCourse(id: Long, update: Course): Course {
@@ -58,11 +57,11 @@ class CourseService constructor(@Autowired private val repository: CourseReposit
         if (update.score != 0) {
             note.score = update.score
             note.grade = when {
-                update.score >= 70 -> "A"
-                update.score >= 60 -> "B"
-                update.score >= 50 -> "C"
-                update.score >= 45 -> "D"
-                else -> "F"
+                update.score >= 70 -> 'A'
+                update.score >= 60 -> 'B'
+                update.score >= 50 -> 'C'
+                update.score >= 45 -> 'D'
+                else -> 'F'
             }
             note.gradePoint = when {
                 update.score >= 70 -> 5

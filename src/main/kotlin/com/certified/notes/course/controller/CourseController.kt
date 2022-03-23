@@ -16,9 +16,9 @@ class CourseController constructor(@Autowired private val service: CourseService
     @GetMapping(path = ["{id}"])
     fun getCourseWithID(@PathVariable("id") id: Long) = service.getCourseWithID(id)
 
-    @Query(value = "courseCode")
-    fun getNotesWithCourseCode(@RequestParam("courseCode") courseCode: String) =
-        service.getNotesWithCourseCode(courseCode)
+//    @Query(value = "courseCode")
+//    fun getNotesWithCourseCode(@RequestParam("courseCode") courseCode: String) =
+//        service.getNotesWithCourseCode(courseCode)
 
     @PostMapping
     fun createCourse(@RequestBody course: Course) = service.addNewCourse(course)

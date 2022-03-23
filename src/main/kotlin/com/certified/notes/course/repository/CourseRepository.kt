@@ -10,6 +10,6 @@ import java.util.*
 @Repository
 interface CourseRepository : JpaRepository<Course, Long> {
 
-    @Query("SELECT n FROM Note n WHERE n.courseCode = ?1")
-    fun findCourseNotes(courseCode: String): Optional<List<Note>>
+//    @Query("SELECT n FROM Note n WHERE n.courseCode = ?1")
+//    fun findCourseNotes(courseCode: String): Optional<List<Note>>
 }
