@@ -11,25 +11,10 @@ import java.time.Month
 @Configuration
 class NoteConfig {
 //    @Bean
-//    fun commandLineRunner(repository: StudentRepository): CommandLineRunner {
+//    fun commandLineRunner(repository: NoteRepository): CommandLineRunner {
 //        return CommandLineRunner {
 //            repository.saveAll(
-//                listOf(
-//                    Student(
-//                        name = "Mariam",
-//                        email = "mariam.jamal@gmail.com",
-//                        dob = LocalDate.of(2000, Month.JANUARY, 5)
-//                    ),
-//                    Student(
-//                        name = "Samson",
-//                        email = "achiagasamson5@gmail.com",
-//                        dob = LocalDate.of(2005, Month.FEBRUARY, 25)
-//                    ),
-//                    Student(name = "Smith"),
-//                    Student(name = "Shola"),
-//                    Student(name = "Dolapo"),
-//                    Student(name = "Esther")
-//                )
+//                listOf()
 //            )
 //        }
 //    }
